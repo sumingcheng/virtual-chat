@@ -142,3 +142,7 @@ vite.config.ts.timestamp-*
 .idea
 .vscode
 dev.md
+todo.md
+./mongodb
+./redis
+./kafka

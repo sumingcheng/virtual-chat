@@ -12,7 +12,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: virtual-chat-mongo-2024
     volumes:
-      - ./data/mongodb:/data/db
+      - ./mongodb:/data/db
       - ./mongo-init:/docker-entrypoint-initdb.d:ro
     networks:
       - virtual-chat-network
@@ -24,7 +24,7 @@ services:
     ports:
       - '6379:6379'
     volumes:
-      - ./data/redis:/data
+      - ./redis:/data
     command: redis-server --appendonly yes --requirepass virtual-chat-redis-2024
     networks:
       - virtual-chat-network
@@ -60,7 +60,7 @@ services:
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
       KAFKA_NUM_PARTITIONS: 1
     volumes:
-      - ./data/kafka:/var/lib/kafka/data
+      - ./kafka:/var/lib/kafka/data
     networks:
       - virtual-chat-network
     healthcheck:
