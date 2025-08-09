@@ -143,6 +143,6 @@ vite.config.ts.timestamp-*
 .vscode
 dev.md
 todo.md
-./mongodb
-./redis
-./kafka
+deploy/mongodb
+deploy/redis
+deploy/kafka
